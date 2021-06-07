@@ -35,6 +35,7 @@ int	parcer(t_s *s)
 		if (s->min_2_eat < 0)
 			ft_exit("bad min eat");
 	}
+	s->start_time = get_time();
 	return (0);
 }
 
@@ -51,22 +52,25 @@ int	create_forks(t_s *s)
 	return (0);
 }
 
-int	create_phtreads(t_s *s)
+int	create_pthreads(t_s *s)
 {
 	int i;
 
 	i = 1;
 	s->philos = ft_calloc(sizeof(t_philo), s->philo_count + 1);
-	if (pthread_create(&s->philos[0], NULL, &spy_func, (void *)s) != 0)
-		ft_exit("pthread_create error");
+
 	while (i < s->philo_count + 1)
 	{
 		s->philo_id = i;
 		s->philos[i].left_hand = i - 1;
 		s->philos[i].right_hand = i % s->philo_count;
+		s->philos[i].eat_count = s->min_2_eat;
 		if (pthread_create(&s->philos[i], NULL, &life, (void *)s) != 0)
 			ft_exit("pthread_create error");
+		usleep(100);
 		i++;
 	}
+	if (pthread_create(&s->philos[0], NULL, &spy_func, (void *)s) != 0)
+		ft_exit("pthread_create error");
 	return (0);
 }

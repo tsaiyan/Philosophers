@@ -12,6 +12,16 @@
 
 #include "header.h"
 
+int ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
@@ -49,10 +59,6 @@ int	ft_atoi(const char *str)
 	{
 		res = res * 10 + (str[i] - 48);
 		i++;
-		if (res > 922337203685477580 && sign < 0)
-			return (0);
-		if (res > 922337203685477580 && sign > 0)
-			return (-1);
 	}
 	return ((int)res * sign);
 }
