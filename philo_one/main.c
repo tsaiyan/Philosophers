@@ -12,66 +12,18 @@
 
 #include "header.h"
 
-int ft_strlen(char *str)
+int	main(int argc, char **argv)
 {
-	int	i;
+	t_s	*s;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_exit(char *str)
-{
-	printf("%s\n", str);
-	exit(-1);
-}
-
-int	ft_atoi(const char *str)
-{
-	int			sign;
-	long int	i;
-	long int	res;
-
-	res = 0;
-	i = 0;
-	sign = 1;
-	if (!str)
-		return 0;
-	while ((str[i] == 32) || ((str[i] >= 9 && str[i] <= 13)))
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		res = res * 10 + (str[i] - 48);
-		i++;
-	}
-	return ((int)res * sign);
-}
-
-void *ft_calloc(int size, int len)
-{
-    void *str;
-
-	str = malloc((size * len));
-	if (!str)
-		exit(errno);
-	int total_size = size*len;
-	while (total_size)
-		((char *)str)[total_size--] = 0;
-	return (str);
+	s = ft_calloc(sizeof(t_s), 1);
+	s->a_r_g_c = argc;
+	s->argv = argv;
+	parcer(s);
+	if (pthread_mutex_init(&s->output, NULL) != 0)
+		ft_exit("mutex output init error");
+	create_forks(s);
+	create_pthreads(s);
+	if (pthread_join(s->philos[0].thread, NULL))
+		return (0);
 }
