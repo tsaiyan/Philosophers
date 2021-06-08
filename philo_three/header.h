@@ -42,7 +42,7 @@ typedef struct s_s
 	sem_t			*output;
 	sem_t			*forks;
 	sem_t			*stop;
-	sem_t			*eat_count;
+	sem_t			*sem_eat_count;
 	int				a_r_g_c;
 	char			**argv;
 
@@ -55,7 +55,7 @@ typedef struct s_s
 	int				philo_id;
 	int				philo_died;
 	t_philo			*philos;
-	t_philo			spy_thread;
+	t_philo			finish_eat;
 	long			start_time;
 	int				exit;
 	int				pid_array[200];
@@ -67,7 +67,7 @@ int		parcer(t_s *s);
 int		init_sem(t_s *s);
 int		ft_exit(char *str);
 void	*life(t_philo	*philo);
-void	*spy_func(void *all);
+void	*wait_eat_finish(void *all);
 int		create_processes(t_s *s);
 long	get_time(void);
 void	my_usleep(long wait);

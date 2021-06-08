@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -22,7 +23,14 @@ int	main(int argc, char **argv)
 	parcer(s);
 	init_sem(s);
 	create_processes(s);
+	my_usleep(s->time_2_die);
+	errno = 0;
 	sem_wait(s->stop);
+	if (errno)
+	{
+		perror("////////////////////////////////////1");
+		s = NULL;
+	}
 	kill_pid(s);
 	return (0);
 }

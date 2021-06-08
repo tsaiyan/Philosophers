@@ -19,9 +19,14 @@ void	kill_pid(t_s *s)
 	i = 0;
 	while(s->pid_array[++i])
 		kill(s->pid_array[i], SIGKILL);
-	sem_close(s->forks);
-	sem_close(s->output);
-	sem_close(s->eat_count);
+	sem_unlink("/forks");
+	sem_unlink("/output");
+	sem_unlink("/stop");
+	sem_unlink("/sem_eat_count");
+//	sem_close(s->forks);
+//	sem_close(s->output);
+//	sem_post(s->sem_eat_count);
+//	sem_close(s->sem_eat_count);
 }
 
 void	my_usleep(long wait)
@@ -31,13 +36,6 @@ void	my_usleep(long wait)
 	time = get_time();
 	while (get_time() - time < wait)
 		usleep(100);
-}
-
-void	my_sem_destroy(t_s *s)
-{
-	//sem_wait(s->output);
-	sem_unlink("forks");
-	sem_unlink("output");
 }
 
 long	get_time(void)

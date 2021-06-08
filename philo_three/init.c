@@ -17,21 +17,23 @@ int	init_sem(t_s *s)
 	int i;
 
 	i = -1;
-	sem_unlink("/someone_died");
 	sem_unlink("/output");
 	sem_unlink("/forks");
+	sem_unlink("/eat_count");
+	sem_unlink("/stop");
+	errno = 0;
 	s->forks = sem_open("/forks", O_CREAT, 0666, s->philo_count);
-//	if (errno)
-//		ft_exit("can't create semaphore for forks");
+	if (errno)
+		ft_exit("can't create semaphore for forks");
 	s->output = sem_open("/output", O_CREAT, 0666, 1);
-//	if (errno)
-//		ft_exit("semaphore output init error");
-	s->stop = sem_open("/someone_died", O_CREAT, 0666, 0);
-//	if (errno)
-//		ft_exit("semaphore someone_died init error");
-	s->eat_count = sem_open("/eat_count", O_CREAT, 0666, 0);
-//	if (errno)
-//		ft_exit("semaphore eat_count init error");
+	if (errno)
+		ft_exit("semaphore output init error");
+	s->stop = sem_open("/stop", O_CREAT, 0666, 1);
+	if (errno)
+		ft_exit("semaphore someone_died init error");
+	s->sem_eat_count = sem_open("/sem_eat_count", O_CREAT, 0666, 0);
+	if (errno)
+		ft_exit("semaphore eat_count init error");
 	return (0);
 }
 
@@ -57,11 +59,12 @@ int	create_processes(t_s *s)
 							   (void *)&s->philos[i]) != 0)
 				ft_exit("pthread_create error");
 			life(&s->philos[i]);
+			exit(0);
 		}
 		s->pid_array[i] = pid;
 		i++;
 	}
-//	if (pthread_create(&s->spy_thread.thread, NULL, &spy_func, (void *)s) != 0)
-//		ft_exit("pthread_create error");
+	if (pthread_create(&s->finish_eat.thread, NULL, &wait_eat_finish, (void *)s) != 0)
+		ft_exit("pthread_create error");
 	return (0);
 }
