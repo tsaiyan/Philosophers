@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "kill_pid:utils_logic.c">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "s-&gt;spy_thread">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "create_forks:init.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "s-&gt;forks[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "create_processes:init.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "s-&gt;spy_thread">
+            </PersistentString>
+            <PersistentString
+               value = "spy_thread">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
