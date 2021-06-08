@@ -17,21 +17,21 @@ int	init_sem(t_s *s)
 	int i;
 
 	i = -1;
-	sem_unlink("someone_died");
-	sem_unlink("output");
-	sem_unlink("forks");
-	s->forks = sem_open("forks", O_CREAT, 0666, s->philo_count);
-	if (errno)
-		ft_exit("can't create semaphore for forks");
-	s->output = sem_open("output", O_CREAT, 0666, 1);
-	if (errno)
-		ft_exit("semaphore output init error");
-	s->stop = sem_open("someone_died", O_CREAT, 0666, 0);
-	if (errno)
-		ft_exit("semaphore someone_died init error");
-	s->eat_count = sem_open("eat_count", O_CREAT, 0666, 0);
-	if (errno)
-		ft_exit("semaphore eat_count init error");
+	sem_unlink("/someone_died");
+	sem_unlink("/output");
+	sem_unlink("/forks");
+	s->forks = sem_open("/forks", O_CREAT, 0666, s->philo_count);
+//	if (errno)
+//		ft_exit("can't create semaphore for forks");
+	s->output = sem_open("/output", O_CREAT, 0666, 1);
+//	if (errno)
+//		ft_exit("semaphore output init error");
+	s->stop = sem_open("/someone_died", O_CREAT, 0666, 0);
+//	if (errno)
+//		ft_exit("semaphore someone_died init error");
+	s->eat_count = sem_open("/eat_count", O_CREAT, 0666, 0);
+//	if (errno)
+//		ft_exit("semaphore eat_count init error");
 	return (0);
 }
 

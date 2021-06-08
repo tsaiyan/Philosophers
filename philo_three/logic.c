@@ -85,10 +85,7 @@ int	all_eated(t_s *s)
 		i++;
 	}
 	if (sum == s->philo_count)
-	{
-		s->exit = 1;
 		return (1);
-	}
 	return (0);
 }
 
@@ -123,7 +120,7 @@ void	*hara_kiri(void *void_philo)
 	{
 		if (get_time() - philo->time_zero > s->time_2_die)
 		{
-		//	sem_post(s->stop);
+			sem_post(s->stop);
 			//sem_wait(s->output);
 			printf("%lu %d is dead.\n", get_time() - s->start_time, i);
 			sem_post(s->stop);
@@ -132,7 +129,7 @@ void	*hara_kiri(void *void_philo)
 		if (all_eated(s))
 		{
 			//puts("hara_kiri");
-		//	sem_post(s->stop);
+			sem_post(s->stop);
 			exit(0);
 		}
 //		if (errno)

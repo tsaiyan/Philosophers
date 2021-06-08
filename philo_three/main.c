@@ -23,9 +23,6 @@ int	main(int argc, char **argv)
 	init_sem(s);
 	create_processes(s);
 	sem_wait(s->stop);
-	sem_wait(s->output);
-	sem_close(s->output);//("output");
 	kill_pid(s);
-	//while(wait(NULL));
 	return (0);
 }
