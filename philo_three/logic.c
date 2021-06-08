@@ -22,7 +22,7 @@ int	drop_forks(t_s *s, t_philo *philo, int id)
 	if (s->min_2_eat && philo->eat_count <= 0)
 	{
 		sem_post(s->sem_eat_count);
-		exit(0);
+		return (1);
 	}
 	semaphored_print(s, "is sleeping.", id);
 	my_usleep(s->time_4_sleep);
@@ -46,18 +46,23 @@ void	eat(t_s *s, int id)
 
 void	*life(t_philo	*philo)
 {
-	t_s		*s;
+	t_s	*s;
+	int	flag;
 
+	flag = 1;
 	s = (t_s *)philo->all;
 	philo->time_zero = get_time();
 	if (philo->id % 2 == 0)
 		my_usleep(s->time_4_eat);
-	while (1)
+	while (flag)
 	{
 		eat(s, philo->id);
-		drop_forks(s, philo, philo->id);
+		if (drop_forks(s, philo, philo->id) == 1)
+			flag = 0;
 		usleep(100);
 	}
+	my_usleep(s->time_2_die);
+	return (NULL);
 }
 
 // check if is eat counter and exit when all philo are eat
@@ -96,7 +101,9 @@ void	*wait_eat_finish(void *all)
 		sem_wait(s->sem_eat_count);
 		usleep(100);
 	}
-	sem_post(s->stop);
+	if (s->min_2_eat)
+		sem_post(s->stop);
+	my_usleep(s->time_2_die);
 	return (NULL);
 }
 
@@ -105,19 +112,22 @@ void	*hara_kiri(void *void_philo)
 	int	i;
 	t_s	*s;
 	t_philo *philo;
+	int flag;
 
+	flag = 1;
 	philo = (t_philo *)void_philo;
 	s = (t_s *)philo->all;
 	i = philo->id;
 	my_usleep(s->time_2_die);
-	while (1)
+	while (flag)
 	{
 		if (get_time() - philo->time_zero > s->time_2_die)
 		{
 			sem_wait(s->output);
 			printf("%lu %d is dead.\n", get_time() - s->start_time, i);
 			sem_post(s->stop);
-			exit(0);
+			my_usleep(s->time_2_die);
+			flag = 0;
 		}
 	}
 	return (NULL);

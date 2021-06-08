@@ -23,10 +23,6 @@ void	kill_pid(t_s *s)
 	sem_unlink("/output");
 	sem_unlink("/stop");
 	sem_unlink("/sem_eat_count");
-//	sem_close(s->forks);
-//	sem_close(s->output);
-//	sem_post(s->sem_eat_count);
-//	sem_close(s->sem_eat_count);
 }
 
 void	my_usleep(long wait)

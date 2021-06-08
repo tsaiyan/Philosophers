@@ -19,7 +19,7 @@ int	init_sem(t_s *s)
 	i = -1;
 	sem_unlink("/output");
 	sem_unlink("/forks");
-	sem_unlink("/eat_count");
+	sem_unlink("/sem_eat_count");
 	sem_unlink("/stop");
 	errno = 0;
 	s->forks = sem_open("/forks", O_CREAT, 0666, s->philo_count);
@@ -28,7 +28,7 @@ int	init_sem(t_s *s)
 	s->output = sem_open("/output", O_CREAT, 0666, 1);
 	if (errno)
 		ft_exit("semaphore output init error");
-	s->stop = sem_open("/stop", O_CREAT, 0666, 1);
+	s->stop = sem_open("/stop", O_CREAT, 0666, 0);
 	if (errno)
 		ft_exit("semaphore someone_died init error");
 	s->sem_eat_count = sem_open("/sem_eat_count", O_CREAT, 0666, 0);

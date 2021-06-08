@@ -23,14 +23,11 @@ int	main(int argc, char **argv)
 	parcer(s);
 	init_sem(s);
 	create_processes(s);
-	my_usleep(s->time_2_die);
 	errno = 0;
 	sem_wait(s->stop);
-	if (errno)
-	{
-		perror("////////////////////////////////////1");
-		s = NULL;
-	}
+	if (errno == EINTR)
+		printf("/////////////////////////////\n");
+	//usleep(1000);
 	kill_pid(s);
 	return (0);
 }
