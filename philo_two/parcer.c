@@ -36,39 +36,3 @@ int	parcer(t_s *s)
 	}
 	return (0);
 }
-
-int	create_forks(t_s *s)
-{
-	int	i;
-
-	i = -1;
-	s->forks = ft_calloc(sizeof(pthread_mutex_t), s->philo_count + 1);
-	while (++i < s->philo_count)
-		if (pthread_mutex_init(&s->forks[i], NULL) != 0)
-			ft_exit("can't create mutex for forks");
-	return (0);
-}
-
-int	create_pthreads(t_s *s)
-{
-	int	i;
-
-	i = 1;
-	s->philos = ft_calloc(sizeof(t_philo), s->philo_count);
-	s->start_time = get_time();
-	while (i <= s->philo_count)
-	{
-		s->philos[i].id = i;
-		s->philos[i].left_hand = i - 1;
-		s->philos[i].right_hand = i % s->philo_count;
-		s->philos[i].eat_count = s->min_2_eat;
-		s->philos[i].all = s;
-		if (pthread_create(&s->philos[i].thread, NULL, &life, \
-						   (void *)&s->philos[i]) != 0)
-			ft_exit("pthread_create error");
-		i++;
-	}
-	if (pthread_create(&s->philos[0].thread, NULL, &spy_func, (void *)s) != 0)
-		ft_exit("pthread_create error");
-	return (0);
-}
