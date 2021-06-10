@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "97704821266EB02200A875B9"
-               BuildableName = "philo_two"
-               BlueprintName = "philo_two"
-               ReferencedContainer = "container:philo_two.xcodeproj">
+               BlueprintIdentifier = "97A1BBCA2671FF3300D124B7"
+               BuildableName = "philo_four"
+               BlueprintName = "philo_four"
+               ReferencedContainer = "container:philo_three.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,18 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97704821266EB02200A875B9"
-            BuildableName = "philo_two"
-            BlueprintName = "philo_two"
-            ReferencedContainer = "container:philo_two.xcodeproj">
+            BlueprintIdentifier = "97A1BBCA2671FF3300D124B7"
+            BuildableName = "philo_four"
+            BlueprintName = "philo_four"
+            ReferencedContainer = "container:philo_three.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "5 800 200 200"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97704821266EB02200A875B9"
-            BuildableName = "philo_two"
-            BlueprintName = "philo_two"
-            ReferencedContainer = "container:philo_two.xcodeproj">
+            BlueprintIdentifier = "97A1BBCA2671FF3300D124B7"
+            BuildableName = "philo_four"
+            BlueprintName = "philo_four"
+            ReferencedContainer = "container:philo_three.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -23,6 +23,7 @@ void	my_usleep(long wait)
 
 void	my_sem_destroy(t_s *s)
 {
+	(void)s;
 	sem_unlink("forks");
 	sem_unlink("output");
 }

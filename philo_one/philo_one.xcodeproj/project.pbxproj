@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		974822D4266FACBF0029A4C3 /* utils_logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 974822CE266FACBF0029A4C3 /* utils_logic.c */; };
-		974822D5266FACBF0029A4C3 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 974822CF266FACBF0029A4C3 /* utils.c */; };
-		974822D6266FACBF0029A4C3 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 974822D0266FACBF0029A4C3 /* main.c */; };
-		974822D7266FACBF0029A4C3 /* logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 974822D1266FACBF0029A4C3 /* logic.c */; };
-		974822D8266FACBF0029A4C3 /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 974822D3266FACBF0029A4C3 /* parcer.c */; };
+		979AD5AD2672227000CCF59E /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5A72672227000CCF59E /* utils.c */; };
+		979AD5AE2672227000CCF59E /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5A92672227000CCF59E /* parcer.c */; };
+		979AD5AF2672227000CCF59E /* utils_logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5AA2672227000CCF59E /* utils_logic.c */; };
+		979AD5B02672227000CCF59E /* logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5AB2672227000CCF59E /* logic.c */; };
+		979AD5B12672227000CCF59E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5AC2672227000CCF59E /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,13 +27,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		974822CE266FACBF0029A4C3 /* utils_logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils_logic.c; sourceTree = "<group>"; };
-		974822CF266FACBF0029A4C3 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
-		974822D0266FACBF0029A4C3 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		974822D1266FACBF0029A4C3 /* logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logic.c; sourceTree = "<group>"; };
-		974822D2266FACBF0029A4C3 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		974822D3266FACBF0029A4C3 /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parcer.c; sourceTree = "<group>"; };
-		97704822266EB02200A875B9 /* philo_two */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = philo_two; sourceTree = BUILT_PRODUCTS_DIR; };
+		97704822266EB02200A875B9 /* philo_two */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = philo_two; path = /Users/tsaiyan/Philosophers/philo_one/build/Debug/philo_two; sourceTree = "<absolute>"; };
+		979AD5A72672227000CCF59E /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils.c; path = sources/utils.c; sourceTree = "<group>"; };
+		979AD5A82672227000CCF59E /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = header.h; path = sources/header.h; sourceTree = "<group>"; };
+		979AD5A92672227000CCF59E /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parcer.c; path = sources/parcer.c; sourceTree = "<group>"; };
+		979AD5AA2672227000CCF59E /* utils_logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils_logic.c; path = sources/utils_logic.c; sourceTree = "<group>"; };
+		979AD5AB2672227000CCF59E /* logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = logic.c; path = sources/logic.c; sourceTree = "<group>"; };
+		979AD5AC2672227000CCF59E /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = sources/main.c; sourceTree = "<group>"; };
+		979AD5B22672227A00CCF59E /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,22 +51,14 @@
 		97704819266EB02200A875B9 = {
 			isa = PBXGroup;
 			children = (
-				97704823266EB02200A875B9 /* Products */,
-				974822D2266FACBF0029A4C3 /* header.h */,
-				974822D1266FACBF0029A4C3 /* logic.c */,
-				974822D0266FACBF0029A4C3 /* main.c */,
-				974822D3266FACBF0029A4C3 /* parcer.c */,
-				974822CE266FACBF0029A4C3 /* utils_logic.c */,
-				974822CF266FACBF0029A4C3 /* utils.c */,
+				979AD5A82672227000CCF59E /* header.h */,
+				979AD5AB2672227000CCF59E /* logic.c */,
+				979AD5AC2672227000CCF59E /* main.c */,
+				979AD5A92672227000CCF59E /* parcer.c */,
+				979AD5AA2672227000CCF59E /* utils_logic.c */,
+				979AD5A72672227000CCF59E /* utils.c */,
+				979AD5B22672227A00CCF59E /* Makefile */,
 			);
-			sourceTree = "<group>";
-		};
-		97704823266EB02200A875B9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				97704822266EB02200A875B9 /* philo_two */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,7 +104,7 @@
 				Base,
 			);
 			mainGroup = 97704819266EB02200A875B9;
-			productRefGroup = 97704823266EB02200A875B9 /* Products */;
+			productRefGroup = 97704819266EB02200A875B9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -125,11 +118,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974822D4266FACBF0029A4C3 /* utils_logic.c in Sources */,
-				974822D5266FACBF0029A4C3 /* utils.c in Sources */,
-				974822D7266FACBF0029A4C3 /* logic.c in Sources */,
-				974822D8266FACBF0029A4C3 /* parcer.c in Sources */,
-				974822D6266FACBF0029A4C3 /* main.c in Sources */,
+				979AD5B12672227000CCF59E /* main.c in Sources */,
+				979AD5AE2672227000CCF59E /* parcer.c in Sources */,
+				979AD5AD2672227000CCF59E /* utils.c in Sources */,
+				979AD5B02672227000CCF59E /* logic.c in Sources */,
+				979AD5AF2672227000CCF59E /* utils_logic.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

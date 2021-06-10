@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97704832266EB04600A875B9 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482D266EB04500A875B9 /* utils.c */; };
-		97704833266EB04600A875B9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482E266EB04500A875B9 /* main.c */; };
-		97704834266EB04600A875B9 /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482F266EB04500A875B9 /* parcer.c */; };
-		97704835266EB04600A875B9 /* logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704830266EB04600A875B9 /* logic.c */; };
-		97704836266EB04600A875B9 /* utils_logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704831266EB04600A875B9 /* utils_logic.c */; };
-		97704838266EB0A500A875B9 /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704837266EB0A500A875B9 /* init.c */; };
+		979AD5CC267224E600CCF59E /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5C5267224E600CCF59E /* utils.c */; };
+		979AD5CD267224E600CCF59E /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5C6267224E600CCF59E /* init.c */; };
+		979AD5CE267224E600CCF59E /* logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5C8267224E600CCF59E /* logic.c */; };
+		979AD5CF267224E600CCF59E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5C9267224E600CCF59E /* main.c */; };
+		979AD5D0267224E600CCF59E /* utils_logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5CA267224E600CCF59E /* utils_logic.c */; };
+		979AD5D1267224E600CCF59E /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD5CB267224E600CCF59E /* parcer.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,14 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97704822266EB02200A875B9 /* philo_two */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = philo_two; sourceTree = BUILT_PRODUCTS_DIR; };
-		9770482C266EB04500A875B9 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		9770482D266EB04500A875B9 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
-		9770482E266EB04500A875B9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		9770482F266EB04500A875B9 /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parcer.c; sourceTree = "<group>"; };
-		97704830266EB04600A875B9 /* logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logic.c; sourceTree = "<group>"; };
-		97704831266EB04600A875B9 /* utils_logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils_logic.c; sourceTree = "<group>"; };
-		97704837266EB0A500A875B9 /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		97704822266EB02200A875B9 /* philo_two */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = philo_two; path = /Users/tsaiyan/Philosophers/philo_two/build/Debug/philo_two; sourceTree = "<absolute>"; };
+		979AD5C5267224E600CCF59E /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils.c; path = sources/utils.c; sourceTree = "<group>"; };
+		979AD5C6267224E600CCF59E /* init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = init.c; path = sources/init.c; sourceTree = "<group>"; };
+		979AD5C7267224E600CCF59E /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = header.h; path = sources/header.h; sourceTree = "<group>"; };
+		979AD5C8267224E600CCF59E /* logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = logic.c; path = sources/logic.c; sourceTree = "<group>"; };
+		979AD5C9267224E600CCF59E /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = sources/main.c; sourceTree = "<group>"; };
+		979AD5CA267224E600CCF59E /* utils_logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils_logic.c; path = sources/utils_logic.c; sourceTree = "<group>"; };
+		979AD5CB267224E600CCF59E /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parcer.c; path = sources/parcer.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,23 +52,14 @@
 		97704819266EB02200A875B9 = {
 			isa = PBXGroup;
 			children = (
-				97704823266EB02200A875B9 /* Products */,
-				9770482C266EB04500A875B9 /* header.h */,
-				97704830266EB04600A875B9 /* logic.c */,
-				9770482E266EB04500A875B9 /* main.c */,
-				97704837266EB0A500A875B9 /* init.c */,
-				9770482F266EB04500A875B9 /* parcer.c */,
-				97704831266EB04600A875B9 /* utils_logic.c */,
-				9770482D266EB04500A875B9 /* utils.c */,
+				979AD5C7267224E600CCF59E /* header.h */,
+				979AD5C6267224E600CCF59E /* init.c */,
+				979AD5C8267224E600CCF59E /* logic.c */,
+				979AD5C9267224E600CCF59E /* main.c */,
+				979AD5CB267224E600CCF59E /* parcer.c */,
+				979AD5CA267224E600CCF59E /* utils_logic.c */,
+				979AD5C5267224E600CCF59E /* utils.c */,
 			);
-			sourceTree = "<group>";
-		};
-		97704823266EB02200A875B9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				97704822266EB02200A875B9 /* philo_two */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +105,7 @@
 				Base,
 			);
 			mainGroup = 97704819266EB02200A875B9;
-			productRefGroup = 97704823266EB02200A875B9 /* Products */;
+			productRefGroup = 97704819266EB02200A875B9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -128,12 +119,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97704833266EB04600A875B9 /* main.c in Sources */,
-				97704834266EB04600A875B9 /* parcer.c in Sources */,
-				97704835266EB04600A875B9 /* logic.c in Sources */,
-				97704838266EB0A500A875B9 /* init.c in Sources */,
-				97704836266EB04600A875B9 /* utils_logic.c in Sources */,
-				97704832266EB04600A875B9 /* utils.c in Sources */,
+				979AD5CF267224E600CCF59E /* main.c in Sources */,
+				979AD5CE267224E600CCF59E /* logic.c in Sources */,
+				979AD5CC267224E600CCF59E /* utils.c in Sources */,
+				979AD5D0267224E600CCF59E /* utils_logic.c in Sources */,
+				979AD5D1267224E600CCF59E /* parcer.c in Sources */,
+				979AD5CD267224E600CCF59E /* init.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

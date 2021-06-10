@@ -14,6 +14,7 @@
 
 int	drop_forks(t_s *s, t_philo *philo, int id)
 {
+	(void)philo;
 	if (sem_post(s->forks) == 0)
 		semaphored_print(s, "has drop a fork.", id);
 	if (sem_post(s->forks) == 0)
