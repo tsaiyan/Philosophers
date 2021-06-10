@@ -12,18 +12,19 @@
 
 #include "header.h"
 
-int	main(int argc, char **argv)
-{
-	t_s	*s;
+// wait sem while all didn't ate
 
-	s = ft_calloc(sizeof(t_s), 1);
-	s->a_r_g_c = argc;
-	s->argv = argv;
-	parcer(s);
-	init_sem(s);
-	create_processes(s);
-	check_all_ate(s);
-	sem_wait(s->stop);
-	kill_pid(s);
-	return (0);
+void	*check_all_ate(void *void_philo)
+{
+	t_s		*s;
+	t_philo	*philo;
+	int		i;
+
+	i = 0;
+	philo = (t_philo *)void_philo;
+	s = (t_s *)philo->all;
+	while (++i <= s->philo_count)
+		sem_wait(s->sem_eat_count);
+	sem_post(s->stop);
+	return (NULL);
 }

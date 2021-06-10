@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <errno.h>
 # include <sys/time.h>
-#include <semaphore.h>
+# include <semaphore.h>
 
 typedef struct s_philo
 {

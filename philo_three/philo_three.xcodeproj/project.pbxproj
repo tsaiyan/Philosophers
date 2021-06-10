@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97704832266EB04600A875B9 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482D266EB04500A875B9 /* utils.c */; };
-		97704833266EB04600A875B9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482E266EB04500A875B9 /* main.c */; };
-		97704834266EB04600A875B9 /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9770482F266EB04500A875B9 /* parcer.c */; };
-		97704835266EB04600A875B9 /* logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704830266EB04600A875B9 /* logic.c */; };
-		97704836266EB04600A875B9 /* utils_logic.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704831266EB04600A875B9 /* utils_logic.c */; };
-		97704838266EB0A500A875B9 /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 97704837266EB0A500A875B9 /* init.c */; };
+		979AD59C267214B900CCF59E /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD593267214B900CCF59E /* utils.c */; };
+		979AD59D267214B900CCF59E /* logic_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD594267214B900CCF59E /* logic_utils.c */; };
+		979AD59E267214B900CCF59E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD596267214B900CCF59E /* main.c */; };
+		979AD59F267214B900CCF59E /* check_all_ate.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD597267214B900CCF59E /* check_all_ate.c */; };
+		979AD5A0267214B900CCF59E /* hara_kiri.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD598267214B900CCF59E /* hara_kiri.c */; };
+		979AD5A1267214B900CCF59E /* philos_life.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD599267214B900CCF59E /* philos_life.c */; };
+		979AD5A2267214B900CCF59E /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD59A267214B900CCF59E /* parcer.c */; };
+		979AD5A3267214B900CCF59E /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 979AD59B267214B900CCF59E /* init.c */; };
+		97A1BBCF2671FF3300D124B7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 97A1BBCE2671FF3300D124B7 /* main.c */; };
+		97A1BBDB2671FFA900D124B7 /* parcer.c in Sources */ = {isa = PBXBuildFile; fileRef = 97A1BBDA2671FFA900D124B7 /* parcer.c */; };
+		97A1BBE3267207EC00D124B7 /* hara_kiri.c in Sources */ = {isa = PBXBuildFile; fileRef = 97A1BBE2267207EC00D124B7 /* hara_kiri.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		97704820266EB02200A875B9 /* CopyFiles */ = {
+		97A1BBC92671FF3300D124B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -28,18 +33,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97704822266EB02200A875B9 /* philo_two */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = philo_two; sourceTree = BUILT_PRODUCTS_DIR; };
-		9770482C266EB04500A875B9 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		9770482D266EB04500A875B9 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
-		9770482E266EB04500A875B9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		9770482F266EB04500A875B9 /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parcer.c; sourceTree = "<group>"; };
-		97704830266EB04600A875B9 /* logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logic.c; sourceTree = "<group>"; };
-		97704831266EB04600A875B9 /* utils_logic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils_logic.c; sourceTree = "<group>"; };
-		97704837266EB0A500A875B9 /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		979AD592267214A200CCF59E /* philo_four */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = philo_four; sourceTree = BUILT_PRODUCTS_DIR; };
+		979AD593267214B900CCF59E /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = SOURCE_ROOT; };
+		979AD594267214B900CCF59E /* logic_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logic_utils.c; sourceTree = SOURCE_ROOT; };
+		979AD595267214B900CCF59E /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = SOURCE_ROOT; };
+		979AD596267214B900CCF59E /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = SOURCE_ROOT; };
+		979AD597267214B900CCF59E /* check_all_ate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = check_all_ate.c; sourceTree = SOURCE_ROOT; };
+		979AD598267214B900CCF59E /* hara_kiri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hara_kiri.c; sourceTree = SOURCE_ROOT; };
+		979AD599267214B900CCF59E /* philos_life.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = philos_life.c; sourceTree = SOURCE_ROOT; };
+		979AD59A267214B900CCF59E /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parcer.c; sourceTree = SOURCE_ROOT; };
+		979AD59B267214B900CCF59E /* init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = SOURCE_ROOT; };
+		97A1BBCE2671FF3300D124B7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		97A1BBDA2671FFA900D124B7 /* parcer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parcer.c; sourceTree = "<group>"; };
+		97A1BBE2267207EC00D124B7 /* hara_kiri.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hara_kiri.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9770481F266EB02200A875B9 /* Frameworks */ = {
+		97A1BBC82671FF3300D124B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,63 +59,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		97704819266EB02200A875B9 = {
+		97A1BBC22671FF3300D124B7 = {
 			isa = PBXGroup;
 			children = (
-				97704823266EB02200A875B9 /* Products */,
-				9770482C266EB04500A875B9 /* header.h */,
-				97704830266EB04600A875B9 /* logic.c */,
-				9770482E266EB04500A875B9 /* main.c */,
-				97704837266EB0A500A875B9 /* init.c */,
-				9770482F266EB04500A875B9 /* parcer.c */,
-				97704831266EB04600A875B9 /* utils_logic.c */,
-				9770482D266EB04500A875B9 /* utils.c */,
+				97A1BBCD2671FF3300D124B7 /* philo_four */,
+				979AD592267214A200CCF59E /* philo_four */,
 			);
 			sourceTree = "<group>";
 		};
-		97704823266EB02200A875B9 /* Products */ = {
+		97A1BBCD2671FF3300D124B7 /* philo_four */ = {
 			isa = PBXGroup;
 			children = (
-				97704822266EB02200A875B9 /* philo_two */,
+				979AD597267214B900CCF59E /* check_all_ate.c */,
+				979AD598267214B900CCF59E /* hara_kiri.c */,
+				979AD595267214B900CCF59E /* header.h */,
+				979AD59B267214B900CCF59E /* init.c */,
+				979AD594267214B900CCF59E /* logic_utils.c */,
+				979AD596267214B900CCF59E /* main.c */,
+				979AD59A267214B900CCF59E /* parcer.c */,
+				979AD599267214B900CCF59E /* philos_life.c */,
+				979AD593267214B900CCF59E /* utils.c */,
+				97A1BBCE2671FF3300D124B7 /* main.c */,
+				97A1BBE2267207EC00D124B7 /* hara_kiri.c */,
+				97A1BBDA2671FFA900D124B7 /* parcer.c */,
 			);
-			name = Products;
+			path = philo_four;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		97704821266EB02200A875B9 /* philo_two */ = {
+		97A1BBCA2671FF3300D124B7 /* philo_four */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97704829266EB02200A875B9 /* Build configuration list for PBXNativeTarget "philo_two" */;
+			buildConfigurationList = 97A1BBD22671FF3300D124B7 /* Build configuration list for PBXNativeTarget "philo_four" */;
 			buildPhases = (
-				9770481E266EB02200A875B9 /* Sources */,
-				9770481F266EB02200A875B9 /* Frameworks */,
-				97704820266EB02200A875B9 /* CopyFiles */,
+				97A1BBC72671FF3300D124B7 /* Sources */,
+				97A1BBC82671FF3300D124B7 /* Frameworks */,
+				97A1BBC92671FF3300D124B7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = philo_two;
-			productName = philo_two;
-			productReference = 97704822266EB02200A875B9 /* philo_two */;
+			name = philo_four;
+			productName = philo_four;
+			productReference = 979AD592267214A200CCF59E /* philo_four */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9770481A266EB02200A875B9 /* Project object */ = {
+		97A1BBC32671FF3300D124B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Torres Saiyan";
 				TargetAttributes = {
-					97704821266EB02200A875B9 = {
+					97A1BBCA2671FF3300D124B7 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 9770481D266EB02200A875B9 /* Build configuration list for PBXProject "philo_three" */;
+			buildConfigurationList = 97A1BBC62671FF3300D124B7 /* Build configuration list for PBXProject "philo_four" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,34 +128,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 97704819266EB02200A875B9;
-			productRefGroup = 97704823266EB02200A875B9 /* Products */;
+			mainGroup = 97A1BBC22671FF3300D124B7;
+			productRefGroup = 97A1BBC22671FF3300D124B7;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97704821266EB02200A875B9 /* philo_two */,
+				97A1BBCA2671FF3300D124B7 /* philo_four */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9770481E266EB02200A875B9 /* Sources */ = {
+		97A1BBC72671FF3300D124B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97704833266EB04600A875B9 /* main.c in Sources */,
-				97704834266EB04600A875B9 /* parcer.c in Sources */,
-				97704835266EB04600A875B9 /* logic.c in Sources */,
-				97704838266EB0A500A875B9 /* init.c in Sources */,
-				97704836266EB04600A875B9 /* utils_logic.c in Sources */,
-				97704832266EB04600A875B9 /* utils.c in Sources */,
+				97A1BBCF2671FF3300D124B7 /* main.c in Sources */,
+				979AD5A0267214B900CCF59E /* hara_kiri.c in Sources */,
+				97A1BBDB2671FFA900D124B7 /* parcer.c in Sources */,
+				979AD59F267214B900CCF59E /* check_all_ate.c in Sources */,
+				979AD59C267214B900CCF59E /* utils.c in Sources */,
+				979AD5A1267214B900CCF59E /* philos_life.c in Sources */,
+				979AD59D267214B900CCF59E /* logic_utils.c in Sources */,
+				97A1BBE3267207EC00D124B7 /* hara_kiri.c in Sources */,
+				979AD5A3267214B900CCF59E /* init.c in Sources */,
+				979AD59E267214B900CCF59E /* main.c in Sources */,
+				979AD5A2267214B900CCF59E /* parcer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		97704827266EB02200A875B9 /* Debug */ = {
+		97A1BBD02671FF3300D124B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -166,7 +186,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -199,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		97704828266EB02200A875B9 /* Release */ = {
+		97A1BBD12671FF3300D124B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -225,7 +244,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -251,19 +269,17 @@
 			};
 			name = Release;
 		};
-		9770482A266EB02200A875B9 /* Debug */ = {
+		97A1BBD32671FF3300D124B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		9770482B266EB02200A875B9 /* Release */ = {
+		97A1BBD42671FF3300D124B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -272,25 +288,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9770481D266EB02200A875B9 /* Build configuration list for PBXProject "philo_three" */ = {
+		97A1BBC62671FF3300D124B7 /* Build configuration list for PBXProject "philo_four" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97704827266EB02200A875B9 /* Debug */,
-				97704828266EB02200A875B9 /* Release */,
+				97A1BBD02671FF3300D124B7 /* Debug */,
+				97A1BBD12671FF3300D124B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97704829266EB02200A875B9 /* Build configuration list for PBXNativeTarget "philo_two" */ = {
+		97A1BBD22671FF3300D124B7 /* Build configuration list for PBXNativeTarget "philo_four" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9770482A266EB02200A875B9 /* Debug */,
-				9770482B266EB02200A875B9 /* Release */,
+				97A1BBD32671FF3300D124B7 /* Debug */,
+				97A1BBD42671FF3300D124B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9770481A266EB02200A875B9 /* Project object */;
+	rootObject = 97A1BBC32671FF3300D124B7 /* Project object */;
 }

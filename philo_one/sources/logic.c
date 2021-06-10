@@ -12,31 +12,33 @@
 
 #include "header.h"
 
-int	drop_forks(t_s *s, t_philo *philo, int id)
+int	drop_forks(t_s *s, int id)
 {
-	sem_post(s->forks);
-	semaphored_print(s, "has drop a fork.", id);
-	sem_post(s->forks);
-	semaphored_print(s, "has drop a fork.", id);
-	s->philos[id].eat_count--;
-	if (s->min_2_eat && philo->eat_count <= 0)
+	if (pthread_mutex_unlock(&s->forks[s->philos[id].left_hand]) == 0)
+		mutexed_print(s, "has drop a left fork.", id);
+	if (pthread_mutex_unlock(&s->forks[s->philos[id].right_hand]) == 0)
+		mutexed_print(s, "has drop a right fork.", id);
+	if (s->min_2_eat)
 	{
-		sem_post(s->sem_eat_count);
-		return (1);
+		if (s->philos[id].eat_count == 0)
+		{
+			s->philos[id].finish_eat = 1;
+			return (1);
+		}
 	}
-	semaphored_print(s, "is sleeping.", id);
+	mutexed_print(s, "is sleeping.", id);
 	my_usleep(s->time_4_sleep);
-	semaphored_print(s, "is thinking.", id);
+	mutexed_print(s, "is thinking.", id);
 	return (0);
 }
 
 void	eat(t_s *s, int id)
 {
-	sem_wait(s->forks);
-	semaphored_print(s, "has take a fork.", id);
-	sem_wait(s->forks);
-	semaphored_print(s, "has take a fork.", id);
-	semaphored_print(s, "is eating.", id);
+	mutexed_print(s, "has take a left fork.", id);
+	pthread_mutex_lock(&s->forks[s->philos[id].right_hand]);
+	mutexed_print(s, "has take a right fork.", id);
+	mutexed_print(s, "is eating.", id);
+	s->philos[id].eat_count--;
 	my_usleep(s->time_4_eat);
 	s->philos[id].time_last_eat = get_time();
 	s->philos[id].time_zero = get_time();
@@ -44,24 +46,25 @@ void	eat(t_s *s, int id)
 
 // life func of philos
 
-void	*life(t_philo	*philo)
+void	*life(void *void_philos)
 {
-	t_s	*s;
-	int	flag;
+	t_philo	*philo;
+	t_s		*s;
 
-	flag = 1;
+	philo = (t_philo *)void_philos;
 	s = (t_s *)philo->all;
 	philo->time_zero = get_time();
 	if (philo->id % 2 == 0)
 		my_usleep(s->time_4_eat);
-	while (flag)
+	while (!s->exit)
 	{
-		eat(s, philo->id);
-		if (drop_forks(s, philo, philo->id) == 1)
-			flag = 0;
-		usleep(100);
+		if (pthread_mutex_lock(&s->forks[philo->left_hand]) == 0)
+		{
+			eat(s, philo->id);
+			if (drop_forks(s, philo->id) == 1)
+				return (NULL);
+		}
 	}
-	my_usleep(s->time_2_die);
 	return (NULL);
 }
 
@@ -81,53 +84,41 @@ int	all_eated(t_s *s)
 		i++;
 	}
 	if (sum == s->philo_count)
+	{
+		mutex_destroy(s);
+		s->exit = 1;
 		return (1);
+	}
 	return (0);
 }
 
+// checks time life in each thread
 // check eat count in each thread
 // dead report
 
-void	*wait_eat_finish(void *all)
-{
-	int i;
-	t_s *s;
-
-	s = (t_s *)all;
-	i = -1;
-	my_usleep(s->time_4_eat);
-	while(++i < s->philo_count)
-	{
-		sem_wait(s->sem_eat_count);
-		usleep(100);
-	}
-	if (s->min_2_eat)
-		sem_post(s->stop);
-	my_usleep(s->time_2_die);
-	return (NULL);
-}
-
-void	*hara_kiri(void *void_philo)
+void	*spy_func(void *all)
 {
 	int	i;
 	t_s	*s;
-	t_philo *philo;
-	int flag;
 
-	flag = 1;
-	philo = (t_philo *)void_philo;
-	s = (t_s *)philo->all;
-	i = philo->id;
+	s = (t_s *)all;
 	my_usleep(s->time_2_die);
-	while (flag)
+	while (!s->exit)
 	{
-		if (get_time() - philo->time_zero > s->time_2_die)
+		i = 1;
+		while (i <= s->philo_count)
 		{
-			sem_wait(s->output);
-			printf("%lu %d is dead.\n", get_time() - s->start_time, i);
-			sem_post(s->stop);
-			my_usleep(s->time_2_die);
-			flag = 0;
+			if (get_time() - s->philos[i].time_zero > s->time_2_die)
+			{
+				pthread_mutex_lock(&s->output);
+				printf("%lu %d is dead.\n", get_time() - s->start_time, i);
+				mutex_destroy(s);
+				s->exit = 1;
+				return (NULL);
+			}
+			if (all_eated(s))
+				return (NULL);
+			i++;
 		}
 	}
 	return (NULL);

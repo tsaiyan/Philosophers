@@ -67,7 +67,7 @@ void	*spy_func(void *all);
 int		create_pthreads(t_s *s);
 long	get_time(void);
 void	my_usleep(long wait);
-int		ft_strlen(char *str);
 void	mutexed_print(t_s *s, char *str, int id);
 void	mutex_destroy(t_s *s);
+int		drop_forks(t_s *s, int id);
 #endif

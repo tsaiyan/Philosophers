@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>philo_three.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>philo_two.xcscheme_^#shared#^_</key>
+		<key>philo_four.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -17,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>97704821266EB02200A875B9</key>
+		<key>97A1BBCA2671FF3300D124B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

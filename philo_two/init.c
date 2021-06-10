@@ -14,7 +14,7 @@
 
 int	init_sem(t_s *s)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	s->forks = sem_open("forks", O_CREAT, 0666, 0);

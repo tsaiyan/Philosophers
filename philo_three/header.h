@@ -19,21 +19,17 @@
 # include <unistd.h>
 # include <errno.h>
 # include <sys/time.h>
-#include <semaphore.h>
- #include <signal.h>
+# include <semaphore.h>
+# include <signal.h>
 
 typedef struct s_philo
 {
 	pthread_t	thread;
 	int			id;
-	int			left_hand;
-	int			right_hand;
 
 	long		time_zero;
 	long		time_last_eat;
-	int			eating;
 	int			eat_count;
-	int			finish_eat;
 	void		*all;
 }				t_philo;
 
@@ -54,8 +50,8 @@ typedef struct s_s
 
 	int				philo_id;
 	int				philo_died;
-	t_philo			*philos;
-	t_philo			finish_eat;
+	t_philo			**philos;
+	pthread_t		finish_eat;
 	long			start_time;
 	int				exit;
 	int				pid_array[200];
@@ -66,7 +62,7 @@ void	*ft_calloc(int size, int len);
 int		parcer(t_s *s);
 int		init_sem(t_s *s);
 int		ft_exit(char *str);
-void	*life(t_philo	*philo);
+void	life(t_philo *philo);
 void	*wait_eat_finish(void *all);
 int		create_processes(t_s *s);
 long	get_time(void);
@@ -76,4 +72,6 @@ void	semaphored_print(t_s *s, char *str, int id);
 void	my_sem_destroy(t_s *s);
 void	*hara_kiri(void *void_philo);
 void	kill_pid(t_s *s);
+void	*check_all_ate(void *void_philo);
+int		ft_isdigit(int c);
 #endif

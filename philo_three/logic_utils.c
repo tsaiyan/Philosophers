@@ -12,18 +12,22 @@
 
 #include "header.h"
 
+// kill all dauchers pids
+
 void	kill_pid(t_s *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(s->pid_array[++i])
+	while (s->pid_array[++i])
 		kill(s->pid_array[i], SIGKILL);
 	sem_unlink("/forks");
 	sem_unlink("/output");
 	sem_unlink("/stop");
 	sem_unlink("/sem_eat_count");
 }
+
+// usleep in miliseconds
 
 void	my_usleep(long wait)
 {
@@ -34,6 +38,8 @@ void	my_usleep(long wait)
 		usleep(100);
 }
 
+// get now time in miliseconds
+
 long	get_time(void)
 {
 	struct timeval	time;
@@ -41,6 +47,9 @@ long	get_time(void)
 	gettimeofday(&time, NULL);
 	return ((long)time.tv_sec * 1000 + (long)time.tv_usec / 1000);
 }
+
+// printer with semaphore
+// semaphore for extra protection output when one of philos is dead
 
 void	semaphored_print(t_s *s, char *str, int id)
 {
