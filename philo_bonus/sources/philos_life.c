@@ -15,11 +15,11 @@
 int	ft_eat(t_s *s, t_philo *philo)
 {
 	sem_wait(s->forks);
-	semaphored_print(s, "has take a fork.", philo->id);
+	semaphored_print(s, "has taken a fork", philo->id);
 	sem_wait(s->forks);
-	semaphored_print(s, "has take a fork.", philo->id);
+	semaphored_print(s, "has taken a fork", philo->id);
 	my_usleep(s->time_4_eat);
-	semaphored_print(s, "is eating.", philo->id);
+	semaphored_print(s, "is eating", philo->id);
 	philo->eat_count--;
 	philo->time_last_eat = get_time();
 	return (0);
@@ -40,13 +40,11 @@ void	ft_philos_ate(t_s *s, t_philo *philo)
 int	ft_drop_forks(t_s *s, t_philo *philo)
 {
 	sem_post(s->forks);
-	semaphored_print(s, "has drop a fork.", philo->id);
 	sem_post(s->forks);
-	semaphored_print(s, "has drop a fork.", philo->id);
 	ft_philos_ate(s, philo);
-	semaphored_print(s, "is sleeping.", philo->id);
+	semaphored_print(s, "is sleeping", philo->id);
 	my_usleep(s->time_4_sleep);
-	semaphored_print(s, "is thinking.", philo->id);
+	semaphored_print(s, "is thinking", philo->id);
 	return (0);
 }
 

@@ -15,10 +15,8 @@
 int	drop_forks(t_s *s, t_philo *philo, int id)
 {
 	(void)philo;
-	if (sem_post(s->forks) == 0)
-		semaphored_print(s, "has drop a fork.", id);
-	if (sem_post(s->forks) == 0)
-		semaphored_print(s, "has drop a fork.", id);
+	sem_post(s->forks);
+	sem_post(s->forks);
 	if (s->min_2_eat)
 	{
 		if (s->philos[id].eat_count == 0)
@@ -27,18 +25,18 @@ int	drop_forks(t_s *s, t_philo *philo, int id)
 			return (1);
 		}
 	}
-	semaphored_print(s, "is sleeping.", id);
+	semaphored_print(s, "is sleeping", id);
 	my_usleep(s->time_4_sleep);
-	semaphored_print(s, "is thinking.", id);
+	semaphored_print(s, "is thinking", id);
 	return (0);
 }
 
 void	eat(t_s *s, int id)
 {
-	semaphored_print(s, "has take a fork.", id);
+	semaphored_print(s, "has taken a fork", id);
 	sem_wait(s->forks);
-	semaphored_print(s, "has take a fork.", id);
-	semaphored_print(s, "is eating.", id);
+	semaphored_print(s, "has taken a fork", id);
+	semaphored_print(s, "is eating", id);
 	s->philos[id].eat_count--;
 	my_usleep(s->time_4_eat);
 	s->philos[id].time_last_eat = get_time();
@@ -111,14 +109,12 @@ void	*spy_func(void *all)
 			if (get_time() - s->philos[i].time_zero > s->time_2_die)
 			{
 				sem_wait(s->output);
-				printf("%lu %d is dead.\n", get_time() - s->start_time, i);
+				printf("%lu %d died\n", get_time() - s->start_time, i);
 				s->exit = 1;
 				return (NULL);
 			}
 			if (all_eated(s))
 				return (NULL);
-			if (errno)
-				ft_exit("ernno is positive\n");
 			i++;
 		}
 	}

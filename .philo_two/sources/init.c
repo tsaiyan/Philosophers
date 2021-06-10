@@ -17,6 +17,7 @@ int	init_sem(t_s *s)
 	int	i;
 
 	i = -1;
+	errno = 0;
 	s->forks = sem_open("forks", O_CREAT, 0666, 0);
 	if (errno)
 		ft_exit("can't create semaphore for forks");

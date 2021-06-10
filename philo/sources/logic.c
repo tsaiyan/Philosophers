@@ -14,10 +14,10 @@
 
 int	drop_forks(t_s *s, int id)
 {
-	if (pthread_mutex_unlock(&s->forks[s->philos[id].left_hand]) == 0)
-		mutexed_print(s, "has drop a left fork.", id);
-	if (pthread_mutex_unlock(&s->forks[s->philos[id].right_hand]) == 0)
-		mutexed_print(s, "has drop a right fork.", id);
+	if (pthread_mutex_unlock(&s->forks[s->philos[id].left_hand]) != 0)
+		ft_exit("mutex_unlock error");
+	if (pthread_mutex_unlock(&s->forks[s->philos[id].right_hand]) != 0)
+		ft_exit("mutex_unlock error");
 	if (s->min_2_eat)
 	{
 		if (s->philos[id].eat_count == 0)
@@ -26,18 +26,18 @@ int	drop_forks(t_s *s, int id)
 			return (1);
 		}
 	}
-	mutexed_print(s, "is sleeping.", id);
+	mutexed_print(s, "is sleeping", id);
 	my_usleep(s->time_4_sleep);
-	mutexed_print(s, "is thinking.", id);
+	mutexed_print(s, "is thinking", id);
 	return (0);
 }
 
 void	eat(t_s *s, int id)
 {
-	mutexed_print(s, "has take a left fork.", id);
+	mutexed_print(s, "has taken a fork", id);
 	pthread_mutex_lock(&s->forks[s->philos[id].right_hand]);
-	mutexed_print(s, "has take a right fork.", id);
-	mutexed_print(s, "is eating.", id);
+	mutexed_print(s, "has taken a fork", id);
+	mutexed_print(s, "is eating", id);
 	s->philos[id].eat_count--;
 	my_usleep(s->time_4_eat);
 	s->philos[id].time_last_eat = get_time();
@@ -111,7 +111,7 @@ void	*spy_func(void *all)
 			if (get_time() - s->philos[i].time_zero > s->time_2_die)
 			{
 				pthread_mutex_lock(&s->output);
-				printf("%lu %d is dead.\n", get_time() - s->start_time, i);
+				printf("%lu %d died\n", get_time() - s->start_time, i);
 				mutex_destroy(s);
 				s->exit = 1;
 				return (NULL);
