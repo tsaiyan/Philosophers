@@ -31,7 +31,7 @@ void	*hara_kiri(void *void_philo)
 		if (now - philo->time_last_eat >= s->time_2_die)
 		{
 			sem_wait(s->output);
-			printf("%lu %d died\n", now - s->start_time, i);
+			printf("%lu %d died\n", now - s->start_time, philo->id);
 			sem_post(s->stop);
 			break ;
 		}
