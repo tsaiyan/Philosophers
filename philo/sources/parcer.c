@@ -12,6 +12,29 @@
 
 #include "header.h"
 
+// find chars in argv
+
+int	check_chars_in_argv(t_s *s)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (s->argv[i])
+	{
+		j = 0;
+		while (s->argv[i][j])
+		{
+			if (!ft_isdigit(s->argv[i][j]))
+				ft_exit("char in argv");
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+
 int	parcer(t_s *s)
 {
 	if (s->a_r_g_c > 6 || s->a_r_g_c < 5)
@@ -21,6 +44,7 @@ int	parcer(t_s *s)
 		ft_exit("too much philosophers");
 	if (s->philo_count < 2)
 		ft_exit("too little philosophers");
+	check_chars_in_argv(s);
 	s->time_2_die = ft_atoi(s->argv[2]);
 	s->time_4_eat = ft_atoi(s->argv[3]);
 	s->time_4_sleep = ft_atoi(s->argv[4]);

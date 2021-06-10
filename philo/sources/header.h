@@ -70,4 +70,5 @@ void	my_usleep(long wait);
 void	mutexed_print(t_s *s, char *str, int id);
 void	mutex_destroy(t_s *s);
 int		drop_forks(t_s *s, int id);
+int		ft_isdigit(int c);
 #endif
